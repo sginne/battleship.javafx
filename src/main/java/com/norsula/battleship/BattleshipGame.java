@@ -17,6 +17,7 @@ public class BattleshipGame extends Application {
         stage.setScene(beginScene);
         stage.setResizable(false);
         stage.show();
+        //beginScene
     }
 
     public static void main(String[] args) {
