@@ -13,8 +13,9 @@ public class BattleshipGame extends Application {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(BattleshipGame.class.getResource("initialSceneForm.fxml"));
         Scene beginScene = new Scene(fxmlLoader.load());
-        stage.setTitle("Make your choice!");
+        stage.setTitle("Make your choice");
         stage.setScene(beginScene);
+        stage.setResizable(false);
         stage.show();
     }
 
