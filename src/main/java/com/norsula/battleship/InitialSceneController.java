@@ -9,8 +9,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class initialSceneController {
+public class InitialSceneController {
     int boardSize;
     int shipsSize;
     public void updateBoard(){
@@ -31,7 +32,7 @@ public class initialSceneController {
     }
 
     @FXML
-    private TextField nameFirst;
+    public TextField nameFirst;
 
     @FXML
     private TextField nameSecond;
@@ -66,7 +67,8 @@ public class initialSceneController {
 
     @FXML
     void startGame(ActionEvent event) {
-
+        Stage stage = (Stage) beginBtn.getScene().getWindow();
+        stage.close();
 
     }
     public void initialize(){
