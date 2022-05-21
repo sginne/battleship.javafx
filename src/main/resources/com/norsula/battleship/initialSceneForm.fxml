@@ -58,8 +58,8 @@
                 <ComboBox fx:id="submarineAmount" layoutX="280.0" layoutY="82.0" onAction="#updateBoard" onKeyPressed="#updateBoard" prefHeight="23.0" prefWidth="90.0" promptText="Submarine" />
                 <ComboBox fx:id="destroyerAmount" layoutX="370.0" layoutY="82.0" onAction="#updateBoard" onKeyPressed="#updateBoard" prefHeight="23.0" prefWidth="90.0" promptText="Destroyer" />
                 <Label fx:id="shipSizeLabel" layoutX="272.0" layoutY="200.0" text="..." />
-                <TextField fx:id="nameFirst" layoutX="14.0" layoutY="29.0" onAction="#updateBoard" onKeyPressed="#updateBoard" onKeyReleased="#updateBoard" onMouseClicked="#updateBoard" promptText="Type first name" />
-                <TextField fx:id="nameSecond" layoutX="305.0" layoutY="29.0" onAction="#updateBoard" onKeyPressed="#updateBoard" onKeyReleased="#updateBoard" onMouseClicked="#updateBoard" promptText="Type second name" />
+                <TextField fx:id="nameFirst" layoutX="14.0" layoutY="29.0" onAction="#updateBoard" onKeyPressed="#updateBoard" onKeyReleased="#updateBoard" onMouseClicked="#updateBoard" promptText="Type first name" text="firstname" />
+                <TextField fx:id="nameSecond" layoutX="305.0" layoutY="29.0" onAction="#updateBoard" onKeyPressed="#updateBoard" onKeyReleased="#updateBoard" onMouseClicked="#updateBoard" promptText="Type second name" text="secondname" />
                 <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="14.0" layoutY="72.0">
                     <image>
                         <Image url="@block.png" />

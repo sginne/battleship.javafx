@@ -78,8 +78,13 @@ public class InitialSceneController {
         //ChooseSceneController chooseSceneController=choosePositionFxmlLoader.getController();
         Parent root;
         try {
-        Parent choosePositionScene = choosePositionFxmlLoader.load();
-        stage = new Stage();
+            ChooseSceneController chooseSceneController=choosePositionFxmlLoader.getController();
+            Parent choosePositionScene = choosePositionFxmlLoader.load();
+            stage = new Stage();
+            NewGameTransfer newGameTransfer=new NewGameTransfer();
+            newGameTransfer.nameFirst=nameFirst.getText();
+            newGameTransfer.nameSecond=nameSecond.getText();
+            stage.setUserData(newGameTransfer);
             stage.setTitle("TuneUs");
             stage.setScene(new Scene(choosePositionScene));
             stage.show();
