@@ -28,7 +28,7 @@ public class ChooseSceneController {
 
 
     }
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initializeGame() {
         Stage stage = (Stage) testbtn.getScene().getWindow();
         NewGameTransfer newGameTransfer=new NewGameTransfer();
         newGameTransfer=(NewGameTransfer)stage.getUserData();

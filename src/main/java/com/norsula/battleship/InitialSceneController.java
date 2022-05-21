@@ -2,6 +2,7 @@ package com.norsula.battleship;
 
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -78,7 +80,7 @@ public class InitialSceneController {
         //ChooseSceneController chooseSceneController=choosePositionFxmlLoader.getController();
         Parent root;
         try {
-            ChooseSceneController chooseSceneController=choosePositionFxmlLoader.getController();
+
             Parent choosePositionScene = choosePositionFxmlLoader.load();
             stage = new Stage();
             NewGameTransfer newGameTransfer=new NewGameTransfer();
@@ -87,6 +89,9 @@ public class InitialSceneController {
             stage.setUserData(newGameTransfer);
             stage.setTitle("TuneUs");
             stage.setScene(new Scene(choosePositionScene));
+            ChooseSceneController chooseSceneController=choosePositionFxmlLoader.getController();
+
+            chooseSceneController.initializeGame();
             stage.show();
         } catch (IOException e) {e.printStackTrace();}
 
