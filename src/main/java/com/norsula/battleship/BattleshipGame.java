@@ -3,6 +3,7 @@ package com.norsula.battleship;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,6 +28,9 @@ public class BattleshipGame extends Application {
         stage.setTitle("Make your choice");
         stage.setScene(beginScene);
         stage.setResizable(false);
+        //Image img=new Image("file:blocks.png");
+        //stage.getIcons().add(new Image("file:starticon.png"));
+        stage.getIcons().add(new Image(getClass().getResource("starticon.png").toExternalForm()));
         stage.show();
         //String nameFirst=initialSceneController.nameFirst.getText();
         //System.out.println(nameFirst);

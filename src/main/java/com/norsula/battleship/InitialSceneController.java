@@ -86,6 +86,8 @@ public class InitialSceneController {
             NewGameTransfer newGameTransfer=new NewGameTransfer();
             newGameTransfer.nameFirst=nameFirst.getText();
             newGameTransfer.nameSecond=nameSecond.getText();
+            newGameTransfer.x=Integer.parseInt(gridX.getSelectionModel().getSelectedItem());
+            newGameTransfer.y=Integer.parseInt(gridY.getSelectionModel().getSelectedItem());
             stage.setUserData(newGameTransfer);
             stage.setTitle("TuneUs");
             stage.setScene(new Scene(choosePositionScene));
