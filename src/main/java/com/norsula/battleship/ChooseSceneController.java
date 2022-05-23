@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -25,25 +26,28 @@ public class ChooseSceneController {
 
     @FXML
     private GridPane choiceGrid;
-    @FXML
-    private TableView<?> choiceGrid2;
+
 
 
     @FXML
     void hrju(ActionEvent event) {
 
-        Pane header = (Pane) choiceGrid2.lookup("TableHeaderRow");
-        //header.setVisible(false);
-        choiceGrid2.getColumns().clear();
 
+        choiceGrid.getColumnConstraints().clear();
+        choiceGrid.getRowConstraints().clear();
+        for (int x=0;x<newGameTransfer.x;x++){
+
+            choiceGrid.getRowConstraints(). add(new RowConstraints(20));
+        }
 
         for (int y=0;y<newGameTransfer.y;y++){
-            TableColumn column =  new TableColumn("c"+Integer.toString(y+1));
-            column.setCellValueFactory(new PropertyValueFactory<Cell,String>("status"));
-            choiceGrid2.getColumns().add(column);
+
+            choiceGrid.getColumnConstraints(). add(new ColumnConstraints(20));
         }
-        Cell test=new Cell();
-        choiceGrid2.getItems().add(test);
+
+
+
+
 
 
 
