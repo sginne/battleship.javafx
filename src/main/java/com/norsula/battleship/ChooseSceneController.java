@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -27,7 +28,22 @@ public class ChooseSceneController {
     @FXML
     private GridPane choiceGrid;
 
+    @FXML
+    void dragOver(MouseDragEvent event) {
+        System.out.println("Drag over");
 
+    }
+    @FXML
+    void mouseEntered(MouseEvent event) {
+        System.out.println(Double.toString(event.getX()));
+
+
+    }
+    @FXML
+    void mouseMoved(MouseEvent event) {
+        System.out.println("mouse moved");
+
+    }
 
     @FXML
     void hrju(ActionEvent event) {

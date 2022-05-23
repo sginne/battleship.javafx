@@ -6,11 +6,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.norsula.battleship.ChooseSceneController">
    <children>
       <Button fx:id="testbtn" layoutX="172.0" layoutY="157.0" mnemonicParsing="false" onAction="#hrju" text="Button" />
-      <GridPane fx:id="choiceGrid" gridLinesVisible="true" layoutX="52.0" layoutY="26.0">
+      <GridPane fx:id="choiceGrid" gridLinesVisible="true" layoutX="52.0" layoutY="26.0" onMouseDragOver="#dragOver" onMouseEntered="#mouseEntered" onMouseMoved="#mouseMoved">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
