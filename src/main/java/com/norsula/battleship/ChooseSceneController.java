@@ -12,6 +12,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -41,7 +42,14 @@ public class ChooseSceneController {
     }
     @FXML
     void mouseMoved(MouseEvent event) {
-        System.out.println("mouse moved");
+        int X=(int)event.getX()/20;
+        if (X>newGameTransfer.y-1){X=newGameTransfer.y-1;}
+        int Y=(int)event.getY()/20;
+        if (Y>newGameTransfer.x-1){Y=newGameTransfer.x-1;}
+        System.out.println("X:"+Integer.toString(X)+",Y:"+Integer.toString(Y));
+        Text text1 = new Text("T");
+        choiceGrid.add(text1,X, Y);
+
 
     }
 
