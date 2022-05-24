@@ -93,7 +93,7 @@ public class InitialSceneController {
             stage.setScene(new Scene(choosePositionScene));
             ChooseSceneController chooseSceneController=choosePositionFxmlLoader.getController();
 
-            chooseSceneController.initializeGame();
+            chooseSceneController.initializeChoice();
             stage.show();
         } catch (IOException e) {e.printStackTrace();}
 

@@ -42,6 +42,8 @@ public class ChooseSceneController {
     }
     @FXML
     void mouseMoved(MouseEvent event) {
+        choiceGrid.getChildren().clear();
+        clearGrid();
         int X=(int)event.getX()/20;
         if (X>newGameTransfer.y-1){X=newGameTransfer.y-1;}
         int Y=(int)event.getY()/20;
@@ -77,11 +79,29 @@ public class ChooseSceneController {
 
 
     }
-    public void initializeGame() {
+    public void initializeChoice() {
         Stage stage = (Stage) testbtn.getScene().getWindow();
         //NewGameTransfer newGameTransfer=new NewGameTransfer();
         newGameTransfer=(NewGameTransfer)stage.getUserData();
-        System.out.println(newGameTransfer.nameFirst);
+        //System.out.println(newGameTransfer.nameFirst);
+        clearGrid();
+
+
+    }
+    public void clearGrid(){
+
+        choiceGrid.getColumnConstraints().clear();
+        choiceGrid.getRowConstraints().clear();
+        choiceGrid.setGridLinesVisible(true);
+        for (int x=0;x<newGameTransfer.x;x++){
+
+            choiceGrid.getRowConstraints(). add(new RowConstraints(20));
+        }
+
+        for (int y=0;y<newGameTransfer.y;y++){
+
+            choiceGrid.getColumnConstraints(). add(new ColumnConstraints(20));
+        }
 
 
     }
