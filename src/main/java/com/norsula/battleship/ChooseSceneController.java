@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
@@ -16,6 +18,9 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -51,9 +56,20 @@ public class ChooseSceneController {
         if (X>newGameTransfer.y-1){X=newGameTransfer.y-1;}
         int Y=(int)event.getY()/20;
         if (Y>newGameTransfer.x-1){Y=newGameTransfer.x-1;}
-        System.out.println("X:"+Integer.toString(X)+",Y:"+Integer.toString(Y));
-        Text text1 = new Text("T");
-        choiceGrid.add(text1,X, Y);
+        //System.out.println("X:"+Integer.toString(X)+",Y:"+Integer.toString(Y));
+        Image img= new Image(getClass().getResource("block.png").toString());
+
+        ImageView imageView = new ImageView();
+        System.out.println(imageView);
+        imageView.setFitWidth(20);
+        imageView.setFitHeight(20);
+        imageView.setImage(img);
+        choiceGrid.add(imageView,X, Y);
+
+
+
+
+
 
 
     }
