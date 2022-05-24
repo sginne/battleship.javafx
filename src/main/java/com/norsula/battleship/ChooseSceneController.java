@@ -2,6 +2,7 @@ package com.norsula.battleship;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -42,7 +43,9 @@ public class ChooseSceneController {
     }
     @FXML
     void mouseMoved(MouseEvent event) {
+        Node node =choiceGrid.getChildren().get(0);
         choiceGrid.getChildren().clear();
+        choiceGrid.getChildren().add(0,node);
         clearGrid();
         int X=(int)event.getX()/20;
         if (X>newGameTransfer.y-1){X=newGameTransfer.y-1;}
