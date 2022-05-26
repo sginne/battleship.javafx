@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
 
 public class ChooseSceneController {
     public NewGameTransfer newGameTransfer;
+    public Ship activeShip=null;
 
     public String hrju;
     @FXML
@@ -48,9 +49,8 @@ public class ChooseSceneController {
     }
     @FXML
     void mouseMoved(MouseEvent event) {
-        Node node =choiceGrid.getChildren().get(0);
-        choiceGrid.getChildren().clear();
-        choiceGrid.getChildren().add(0,node);
+
+
         clearGrid();
         int X=(int)event.getX()/20;
         if (X>newGameTransfer.y-1){X=newGameTransfer.y-1;}
@@ -60,11 +60,12 @@ public class ChooseSceneController {
         Image img= new Image(getClass().getResource("block.png").toString());
 
         ImageView imageView = new ImageView();
+        Ship ship=new Ship(3,0,0,0);
         System.out.println(imageView);
         imageView.setFitWidth(20);
         imageView.setFitHeight(20);
         imageView.setImage(img);
-        choiceGrid.add(imageView,X, Y);
+        choiceGrid.add(ship.picture,X, Y);
 
 
 
@@ -100,15 +101,16 @@ public class ChooseSceneController {
     }
     public void initializeChoice() {
         Stage stage = (Stage) testbtn.getScene().getWindow();
-        //NewGameTransfer newGameTransfer=new NewGameTransfer();
+
         newGameTransfer=(NewGameTransfer)stage.getUserData();
-        //System.out.println(newGameTransfer.nameFirst);
         clearGrid();
 
 
     }
     public void clearGrid(){
-
+        Node node =choiceGrid.getChildren().get(0);
+        choiceGrid.getChildren().clear();
+        choiceGrid.getChildren().add(0,node);
         choiceGrid.getColumnConstraints().clear();
         choiceGrid.getRowConstraints().clear();
         choiceGrid.setGridLinesVisible(true);
